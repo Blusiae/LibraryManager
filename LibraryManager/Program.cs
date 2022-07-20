@@ -1,7 +1,11 @@
+using LibraryManager.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=.;Database=LibraryManagerDB;Trusted_Connection=True;"));
 
 var app = builder.Build();
 
@@ -19,6 +23,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+}
 
 app.MapControllerRoute(
     name: "default",
