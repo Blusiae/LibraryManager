@@ -8,6 +8,7 @@ namespace LibraryManager.Database
         public DbSet<BookEntity> Books { get; set; }
         public DbSet<ReaderEntity> Readers { get; set; }
         public DbSet<AuthorEntity> Authors { get; set; }
+        public DbSet<BorrowEntity> Borrows { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
