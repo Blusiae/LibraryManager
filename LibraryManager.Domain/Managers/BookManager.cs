@@ -3,26 +3,26 @@
     public class BookManager : IBookManager
     {
         private readonly IBookRepository _bookRepository;
-        private readonly BookMapper _mapper;
+        private readonly DtoMapper _mapper;
 
-        public BookManager(IBookRepository bookRepository, BookMapper mapper)
+        public BookManager(IBookRepository bookRepository, DtoMapper mapper)
         {
             _bookRepository = bookRepository;
             _mapper = mapper;
         }
 
-        public IEnumerable<BookDto> GetAll(string filterString, bool borrowedOnly) //filterString is book title written in search box.
+        public List<BookDto> GetAll(string filterString, bool borrowedOnly) //filterString is book title written in search box.
         {
-            var bookEntities = _bookRepository.GetAll();
+            var bookEntities = _bookRepository.GetAll().ToList();
 
             if(borrowedOnly)
             {
-                bookEntities = bookEntities.Where(x => x.IsBorrowed);
+                bookEntities = bookEntities.Where(x => x.IsBorrowed).ToList();
             }
 
             if (!string.IsNullOrEmpty(filterString))
             {
-                bookEntities = bookEntities.Where(x => x.Title.Contains(filterString));
+                bookEntities = bookEntities.Where(x => x.Title.Contains(filterString)).ToList();
             }
 
             return _mapper.Map(bookEntities);

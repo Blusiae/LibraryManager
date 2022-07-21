@@ -2,7 +2,7 @@
 {
     public interface IReaderManager
     {
-        IEnumerable<ReaderDto> GetAll(string filterString);
+        List<ReaderDto> GetAll(string filterString);
         bool Add(ReaderDto readerDto);
         bool Delete(ReaderDto readerDto);
     }

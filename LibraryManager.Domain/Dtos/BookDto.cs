@@ -7,6 +7,6 @@
         public int PublishYear { get; set; }
         public bool IsBorrowed { get; set; }
         public AuthorDto Author { get; set; }
-        public IEnumerable<BorrowDto> Borrows { get; set; }
+        public List<BorrowDto> Borrows { get; set; }
     }
 }

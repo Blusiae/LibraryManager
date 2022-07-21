@@ -2,7 +2,7 @@
 {
     public interface IBookManager
     {
-        IEnumerable<BookDto> GetAll(string filterString, bool borrowedOnly);
+        List<BookDto> GetAll(string filterString, bool borrowedOnly);
         bool Add(BookDto bookDto);
         bool Delete(BookDto bookDto);
     }

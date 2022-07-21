@@ -6,6 +6,6 @@
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; }
         public DateTime Birthdate { get; set; }
-        public IEnumerable<BorrowDto> Borrows { get; set; }
+        public List<BorrowDto> Borrows { get; set; }
     }
 }

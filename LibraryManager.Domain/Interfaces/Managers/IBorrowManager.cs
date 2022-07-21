@@ -2,7 +2,7 @@
 {
     public interface IBorrowManager
     {
-        public IEnumerable<BorrowDto> GetAll();
+        public List<BorrowDto> GetAll();
         public bool Add(BorrowDto borrowDto);
     }
 }

@@ -3,17 +3,17 @@
     public class BorrowManager : IBorrowManager
     {
         private readonly IBorrowRepository _borrowRepository;
-        private readonly BorrowMapper _mapper;
+        private readonly DtoMapper _mapper;
 
-        public BorrowManager(IBorrowRepository borrowRepository, BorrowMapper borrowMapper)
+        public BorrowManager(IBorrowRepository borrowRepository, DtoMapper borrowMapper)
         {
             _borrowRepository = borrowRepository;
             _mapper = borrowMapper;
         }
 
-        public IEnumerable<BorrowDto> GetAll()
+        public List<BorrowDto> GetAll()
         {
-            var borrowEntities = _borrowRepository.GetAll();
+            var borrowEntities = _borrowRepository.GetAll().ToList();
             return _mapper.Map(borrowEntities);
         }
 
