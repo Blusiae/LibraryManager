@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<BookViewModel>
+@{
     ViewData["Title"] = "Books list";
 }
 
@@ -18,29 +19,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00000</td>
-            <td>Borrowed</td>
-        </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00000</td>
-            <td>Borrowed</td>
-        </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00000</td>
-            <td>Borrowed</td>
-        </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00000</td>
-            <td>Borrowed</td>
-        </tr>
+        @foreach(var book in Model)
+        {
+            <tr onclick="location.href = '@Url.Action("Index", "Book")'">
+                <td>@book.Title</td>
+                <td>@(book.Author.FirstName + " " + book.Author.LastName)</td>
+                <td>@book.PublishYear</td>
+                <td>
+                    @(book.IsBorrowed ? "Borrowed" : "Unborrowed")
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
