@@ -7,10 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=.;Database=LibraryManagerDB;Trusted_Connection=True;"));
-builder.Services.AddTransient<IBookRepository, BookRepository>();
-builder.Services.AddTransient<IAuthorRepository, AuthorRepository>();
-builder.Services.AddTransient<IReaderRepository, ReaderRepository>();
-builder.Services.AddTransient<IBorrowRepository, BorrowRepository>();
+builder.Services.AddTransient<IBookManager, BookManager>();
+builder.Services.AddTransient<IAuthorManager, AuthorManager>();
+builder.Services.AddTransient<IReaderManager, ReaderManager>();
+builder.Services.AddTransient<IBorrowManager, BorrowManager>();
 
 var app = builder.Build();
 
