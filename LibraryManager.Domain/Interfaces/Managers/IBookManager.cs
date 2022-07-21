@@ -3,7 +3,7 @@
     public interface IBookManager
     {
         IEnumerable<BookDto> GetAll(string filterString, bool borrowedOnly);
-        bool Add(BookDto book);
-        bool Delete(BookDto book);
+        bool Add(BookDto bookDto);
+        bool Delete(BookDto bookDto);
     }
 }
