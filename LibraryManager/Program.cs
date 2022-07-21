@@ -23,10 +23,7 @@ builder.Services.AddTransient<IBorrowManager, BorrowManager>();
 #endregion
 #region mappers
 builder.Services.AddTransient<DtoMapper>();
-builder.Services.AddTransient<BookDtoMapper>();
-builder.Services.AddTransient<AuthorDtoMapper>();
-builder.Services.AddTransient<ReaderDtoMapper>();
-builder.Services.AddTransient<BorrowDtoMapper>();
+builder.Services.AddTransient<ViewModelMapper>();
 #endregion
 
 var app = builder.Build();
