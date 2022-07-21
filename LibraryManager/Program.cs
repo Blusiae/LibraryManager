@@ -22,10 +22,7 @@ builder.Services.AddTransient<IReaderManager, ReaderManager>();
 builder.Services.AddTransient<IBorrowManager, BorrowManager>();
 #endregion
 #region mappers
-builder.Services.AddTransient<BookMapper>();
-builder.Services.AddTransient<AuthorMapper>();
-builder.Services.AddTransient<ReaderMapper>();
-builder.Services.AddTransient<BorrowMapper>();
+builder.Services.AddTransient<DtoMapper>();
 builder.Services.AddTransient<BookDtoMapper>();
 builder.Services.AddTransient<AuthorDtoMapper>();
 builder.Services.AddTransient<ReaderDtoMapper>();
