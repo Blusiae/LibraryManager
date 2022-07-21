@@ -1,6 +1,6 @@
 ﻿namespace LibraryManager.Domain
 {
-    public class BorrowManager
+    public class BorrowManager : IBorrowManager
     {
         private readonly IBorrowRepository _borrowRepository;
         private readonly BorrowMapper _mapper;
