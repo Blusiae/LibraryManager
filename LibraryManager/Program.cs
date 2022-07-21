@@ -1,3 +1,4 @@
+using LibraryManager;
 using LibraryManager.Database;
 using LibraryManager.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -7,14 +8,29 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=.;Database=LibraryManagerDB;Trusted_Connection=True;"));
-builder.Services.AddTransient<IBookManager, BookManager>();
-builder.Services.AddTransient<IAuthorManager, AuthorManager>();
-builder.Services.AddTransient<IReaderManager, ReaderManager>();
-builder.Services.AddTransient<IBorrowManager, BorrowManager>();
+
+#region repositories
 builder.Services.AddTransient<IBookRepository, BookRepository>();
 builder.Services.AddTransient<IAuthorRepository, AuthorRepository>();
 builder.Services.AddTransient<IReaderRepository, ReaderRepository>();
 builder.Services.AddTransient<IBorrowRepository, BorrowRepository>();
+#endregion
+#region managers
+builder.Services.AddTransient<IBookManager, BookManager>();
+builder.Services.AddTransient<IAuthorManager, AuthorManager>();
+builder.Services.AddTransient<IReaderManager, ReaderManager>();
+builder.Services.AddTransient<IBorrowManager, BorrowManager>();
+#endregion
+#region mappers
+builder.Services.AddTransient<BookMapper>();
+builder.Services.AddTransient<AuthorMapper>();
+builder.Services.AddTransient<ReaderMapper>();
+builder.Services.AddTransient<BorrowMapper>();
+builder.Services.AddTransient<BookDtoMapper>();
+builder.Services.AddTransient<AuthorDtoMapper>();
+builder.Services.AddTransient<ReaderDtoMapper>();
+builder.Services.AddTransient<BorrowDtoMapper>();
+#endregion
 
 var app = builder.Build();
 
