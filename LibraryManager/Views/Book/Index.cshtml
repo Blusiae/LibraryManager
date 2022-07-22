@@ -1,17 +1,36 @@
-﻿@{
+﻿@model BookViewModel
+@{
+    ReaderViewModel reader = new ReaderViewModel();
+    BorrowViewModel currentBorrow = new BorrowViewModel(); 
+    if(Model.IsBorrowed)
+    {
+        currentBorrow = Model.Borrows.FirstOrDefault(x => !x.IsReturned);
+        reader = currentBorrow.Reader;
+    }
+
+    var borrowsHistory = Model.Borrows.Where(x => x.IsReturned).ToList();
 }
 
 
 <h1>
-    Book's name
-    <small class="text-muted fw-light">#X</small>
+    @Model.Title
+    <small class="text-muted fw-light">#@Model.Id</small>
 </h1> 
-<h5>Author: <i class="fw-normal">Author's name</i></h5>
-<h5>Publication year: <i class="fw-normal">0000</i></h5>
+<h5>Author: <i class="fw-normal">@(Model.Author.FirstName + " " + Model.Author.LastName)</i></h5>
+<h5>Publication year: <i class="fw-normal">@Model.PublishYear</i></h5>
 
 <hr />
 
-<p>The book is currently <text class="text-success fw-bold">unborrowed</text>/<text class="text-danger fw-bold">borrowed</text>(by <b>Name of borrower</b> since 00.00.0000 and should be returned by 00.00.0000.)</p>
+    @if(Model.IsBorrowed)
+    {
+        <p>The book is currently <text class="text-danger fw-bold">borrowed</text>
+        by <b>@(reader.FirstName + " " + reader.LastName)</b> since @currentBorrow.BorrowDate.ToString("dd MMMM yyyy") 
+        and should be returned by @currentBorrow.ReturnDeadline.ToString("dd MMMM yyyy").</p>
+    }
+    else
+    {
+        <p>The book is currently <text class="text-success fw-bold">unborrowed</text>.</p>
+    }
 
 <h4>History of borrows</h4>
 
@@ -27,23 +46,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>John Smith</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
-        <tr>
-            <td>John Smith</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
-        <tr>
-            <td>John Smith</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
+        @if(borrowsHistory.Count == 0)
+        {
+            <p>Nothing to show here!</p>
+        }
+
+        @foreach(var borrow in borrowsHistory)
+        {
+            <tr>
+                <td>@(borrow.Reader.FirstName + " " + borrow.Reader.LastName)</td>
+                <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
+                <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
+                <td>@(((DateTime)borrow.ReturnDate).ToString("dd MMMM yyyy"))</td>
+            </tr>
+        }
     </tbody>
 </table>

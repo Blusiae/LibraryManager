@@ -15,9 +15,9 @@ namespace LibraryManager
             _authorManager = authorManager;
             _mapper = mapper;
         }
-        public IActionResult Index()
+        public IActionResult Index(int bookId)
         {
-            return View();
+            return View(book);
         }
 
         public IActionResult List(string filterString, bool borrowedOnly = false)
