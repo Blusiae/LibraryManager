@@ -27,6 +27,14 @@
 
             return _mapper.Map(bookEntities);
         }
+
+        public BookDto GetById(int id)
+        {
+            var bookEntity = _bookRepository.GetById(id);
+
+            return _mapper.Map(bookEntity);
+        }
+
         public bool Add(BookDto bookDto)
         {
             var bookEntity = _mapper.Map(bookDto);
