@@ -21,7 +21,7 @@
     <tbody>
         @foreach(var book in Model)
         {
-            <tr onclick="location.href = '@Url.Action("Index", "Book", book.Id)'">
+            <tr onclick="location.href = '@Url.Action("Index", "Book", new {bookId = book.Id})'">
                 <td>@book.Title</td>
                 <td>@(book.Author.FirstName + " " + book.Author.LastName)</td>
                 <td>@book.PublishYear</td>

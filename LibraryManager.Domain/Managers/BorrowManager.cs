@@ -17,6 +17,12 @@
             return _mapper.Map(borrowEntities);
         }
 
+        public List<BorrowDto> GetBorrowsByBookId(int bookId)
+        {
+            var borrowEntities = _borrowRepository.GetAll().Where(x => x.BookId == bookId).ToList();
+            return _mapper.Map(borrowEntities);
+        }
+
         public bool Add(BorrowDto borrowDto)
         {
             var borrowEntity = _mapper.Map(borrowDto);

@@ -7,16 +7,23 @@ namespace LibraryManager
     {
         private IBookManager _bookManager;
         private IAuthorManager _authorManager;
+        private IBorrowManager _borrowManager;
         private ViewModelMapper _mapper;
 
-        public BookController(IBookManager bookManager, IAuthorManager authorManager, ViewModelMapper mapper)
+        public BookController(IBookManager bookManager, IAuthorManager authorManager, IBorrowManager borrowManager,ViewModelMapper mapper)
         {
             _bookManager = bookManager;
             _authorManager = authorManager;
+            _borrowManager = borrowManager;
             _mapper = mapper;
         }
         public IActionResult Index(int bookId)
         {
+            var bookDto = _bookManager.GetById(bookId);
+            var book = _mapper.Map(bookDto);
+
+            var borrowsDto = _borrowManager.GetBorrowsByBookId(bookId);
+            ViewData["Borrows"] = _mapper.Map(borrowsDto);
             return View(book);
         }
 

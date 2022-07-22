@@ -1,14 +1,15 @@
 ﻿@model BookViewModel
 @{
+    var borrows = ViewData["Borrows"] as List<BorrowViewModel>;
     ReaderViewModel reader = new ReaderViewModel();
     BorrowViewModel currentBorrow = new BorrowViewModel(); 
     if(Model.IsBorrowed)
     {
-        currentBorrow = Model.Borrows.FirstOrDefault(x => !x.IsReturned);
+        currentBorrow = borrows.FirstOrDefault(x => !x.IsReturned);
         reader = currentBorrow.Reader;
     }
 
-    var borrowsHistory = Model.Borrows.Where(x => x.IsReturned).ToList();
+    var borrowsHistory = borrows.Where(x => x.IsReturned).ToList();
 }
 
 
@@ -46,11 +47,6 @@
         </tr>
     </thead>
     <tbody>
-        @if(borrowsHistory.Count == 0)
-        {
-            <p>Nothing to show here!</p>
-        }
-
         @foreach(var borrow in borrowsHistory)
         {
             <tr>
@@ -62,3 +58,8 @@
         }
     </tbody>
 </table>
+
+@if (borrowsHistory.Count == 0)
+{
+    <p>Nothing to show here!</p>
+}
