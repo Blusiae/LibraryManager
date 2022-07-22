@@ -17,8 +17,11 @@ body {
   margin-bottom: 60px;
 }
 
-tbody tr:hover
-{
+tbody tr.not-clickable:hover{
+    cursor: default;
+}
+
+tbody tr:hover{
     background-color: gainsboro;
     cursor: pointer;
 }
