@@ -2,7 +2,7 @@
 {
     public interface IAuthorManager
     {
-        AuthorDto GetAuthorForBook(BookDto book);
+        List<AuthorDto> GetAll();
         bool Add(AuthorDto authorDto);
     }
 }

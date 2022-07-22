@@ -11,15 +11,18 @@
             _mapper = mapper;
         }
 
-        public AuthorDto GetAuthorForBook(BookDto book)
+        public List<AuthorDto> GetAll()
         {
-            var authorEntities = _authorRepository.GetAll();
-            var authorEntity = authorEntities.FirstOrDefault(x => x.Id == book.Author.Id);
-            return _mapper.Map(authorEntity);
+            var authorEntities = _authorRepository.GetAll().ToList();
+            return _mapper.Map(authorEntities);
         }
 
         public bool Add(AuthorDto authorDto)
         {
+            if(string.IsNullOrEmpty(authorDto.FirstName) || string.IsNullOrEmpty(authorDto.LastName))
+            {
+                return false;
+            }
             var authorEntity = _mapper.Map(authorDto);
             return _authorRepository.Add(authorEntity);
         }
