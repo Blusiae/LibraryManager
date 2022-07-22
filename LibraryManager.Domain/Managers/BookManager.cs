@@ -27,9 +27,15 @@
 
             return _mapper.Map(bookEntities);
         }
-        public bool Add(BookDto bookDto)
+        public bool Add(BookDto bookDto, int authorId)
         {
+            if(string.IsNullOrEmpty(bookDto.Title) || authorId == 0)
+            {
+                return false;
+            }
+
             var bookEntity = _mapper.Map(bookDto);
+            bookEntity.AuthorId = authorId;
             return _bookRepository.Add(bookEntity);
         }
 

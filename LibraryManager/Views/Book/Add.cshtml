@@ -1,0 +1,46 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "Add new book";
+    var authors = ViewData["Authors"] as IEnumerable<AuthorViewModel>;
+}
+
+<h2>Add new book</h2>
+<hr />
+
+<form asp-controller="Book" asp-action="Add">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="Title" required />
+    </div>
+    <div class="form-group">
+        <label for="publication-year">Publication year</label>
+        <input type="number" class="form-control" id="publication-year" name="PublishYear" max=@DateTime.Now.Year required/>
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <div class="d-flex">
+             <select class="form-select w-75" id="author" name="authorId">
+                @foreach(var author in authors)
+                {
+                    <option value="@author.Id">
+                        @(author.FirstName + " " + author.LastName)
+                    </option>
+                }
+            </select>
+            <a class="text-success ms-3 mt-1 fw-bold text-decoration-none" asp-controller="Author" asp-action="Add"><small>Add new</small></a>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success mt-4">Add</button>
+</form>
+
+<p class="text-danger mt-1 invisible" id="fail-info">Adding new book failed. Check if all fields are filled.</p>
+
+
+@{
+    if((bool)ViewData["failInformation"])
+    {
+        <script>
+            document.getElementById("fail-info").classList.remove("invisible");
+        </script>
+    }
+}
