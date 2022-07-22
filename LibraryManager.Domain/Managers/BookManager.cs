@@ -29,7 +29,7 @@
         }
         public bool Add(BookDto bookDto, int authorId)
         {
-            if(string.IsNullOrEmpty(bookDto.Title) || authorId == 0)
+            if (string.IsNullOrEmpty(bookDto.Title) || authorId == 0)
             {
                 return false;
             }
@@ -37,6 +37,13 @@
             var bookEntity = _mapper.Map(bookDto);
             bookEntity.AuthorId = authorId;
             return _bookRepository.Add(bookEntity);
+        }
+
+        public BookDto GetById(int id)
+        {
+            var bookEntity = _bookRepository.GetById(id);
+
+            return _mapper.Map(bookEntity);
         }
 
         public bool Delete(BookDto bookDto)

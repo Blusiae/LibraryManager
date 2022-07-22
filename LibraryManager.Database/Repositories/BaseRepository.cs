@@ -28,6 +28,11 @@ namespace LibraryManager.Database
             return _dbContext.SaveChanges() > 0;
         }
 
+        public Entity GetById(int id)
+        {
+            return DbSet.FirstOrDefault(x => x.Id == id);
+        }
+
         public bool Delete(Entity entity)
         {
             var entityToDelete = DbSet.FirstOrDefault(x => x.Id == entity.Id); //entity param may not have all properties so it's better to find it by Id
