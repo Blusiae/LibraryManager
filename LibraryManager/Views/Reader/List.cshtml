@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ReaderViewModel>
+@{
     ViewData["Title"] = "Readers list";
 }
 
@@ -11,44 +12,19 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th>First name</th>
+            <th>Last name</th>
             <th>Birthdate</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                John
-            </td>
-            <td>
-                Smith
-            </td>
-            <td>
-                00-00-0000
-            </td>
-        </tr>
-        <tr>
-            <td>
-                John
-            </td>
-            <td>
-                Smith
-            </td>
-            <td>
-                00-00-0000
-            </td>
-        </tr>
-        <tr>
-            <td>
-                John
-            </td>
-            <td>
-                Smith
-            </td>
-            <td>
-                00-00-0000
-            </td>
-        </tr>
+        @foreach(var reader in Model)
+        {
+            <tr onclick="location.href = '@Url.Action("Index", "Reader")'">
+                <td>@reader.FirstName</td>
+                <td>@reader.LastName</td>
+                <td>@reader.Birthdate.ToString("dd MMMM yyyy")</td>
+            </tr>
+        }
     </tbody>
 </table>
