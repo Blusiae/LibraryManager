@@ -29,10 +29,9 @@
             return _readerRepository.Add(readerEntity);
         }
 
-        public bool Delete(ReaderDto readerDto)
+        public bool Delete(int readerId)
         {
-            var readerEntity = _mapper.Map(readerDto);
-            return _readerRepository.Delete(readerEntity);
+            return _readerRepository.Delete(readerId);
         }
     }
 }

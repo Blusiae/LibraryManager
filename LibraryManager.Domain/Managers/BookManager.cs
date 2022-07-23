@@ -27,6 +27,19 @@
 
             return _mapper.Map(bookEntities);
         }
+
+        public int GetBooksCountByAuthorId(int authorId)
+        {
+            var bookEntities = _bookRepository.GetAll().Where(x => x.AuthorId == authorId).ToList();
+
+            if(bookEntities == null)
+            {
+                return 0;
+            }
+
+            return bookEntities.Count;
+        }
+
         public bool Add(BookDto bookDto, int authorId)
         {
             if (string.IsNullOrEmpty(bookDto.Title) || authorId == 0)
@@ -46,10 +59,9 @@
             return _mapper.Map(bookEntity);
         }
 
-        public bool Delete(BookDto bookDto)
+        public bool Delete(int bookId)
         {
-            var bookEntity = _mapper.Map(bookDto);
-            return _bookRepository.Delete(bookEntity);
+            return _bookRepository.Delete(bookId);
         }
     }
 }

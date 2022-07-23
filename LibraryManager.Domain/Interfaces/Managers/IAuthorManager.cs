@@ -4,5 +4,6 @@
     {
         List<AuthorDto> GetAll();
         bool Add(AuthorDto authorDto);
+        bool Delete(int authorId);
     }
 }

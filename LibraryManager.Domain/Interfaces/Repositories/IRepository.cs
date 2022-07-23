@@ -5,6 +5,6 @@
         IEnumerable<Entity> GetAll();
         Entity GetById(int id);
         bool Add(Entity entity);
-        bool Delete(Entity entity);
+        bool Delete(int entityId);
     }
 }

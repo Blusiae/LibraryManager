@@ -33,9 +33,9 @@ namespace LibraryManager.Database
             return DbSet.FirstOrDefault(x => x.Id == id);
         }
 
-        public bool Delete(Entity entity)
+        public bool Delete(int entityId)
         {
-            var entityToDelete = DbSet.FirstOrDefault(x => x.Id == entity.Id); //entity param may not have all properties so it's better to find it by Id
+            var entityToDelete = DbSet.FirstOrDefault(x => x.Id == entityId); //entity param may not have all properties so it's better to find it by Id
 
             if(entityToDelete != null) //Check if entity has been found in database.
             {

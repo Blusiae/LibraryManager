@@ -26,5 +26,10 @@
             var authorEntity = _mapper.Map(authorDto);
             return _authorRepository.Add(authorEntity);
         }
+
+        public bool Delete(int authorId)
+        {
+            return _authorRepository.Delete(authorId);
+        }
     }
 }
