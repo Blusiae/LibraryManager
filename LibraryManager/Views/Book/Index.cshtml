@@ -49,7 +49,7 @@
     <tbody>
         @foreach(var borrow in borrowsHistory)
         {
-            <tr>
+            <tr class="not-clickable">
                 <td>@(borrow.Reader.FirstName + " " + borrow.Reader.LastName)</td>
                 <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
                 <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
