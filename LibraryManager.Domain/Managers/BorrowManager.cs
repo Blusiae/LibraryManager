@@ -23,6 +23,12 @@
             return _mapper.Map(borrowEntities);
         }
 
+        public List<BorrowDto> GetAllCurrentBorrows()
+        {
+            var borrowEntities = _borrowRepository.GetAll().Where(x => !x.IsReturned).ToList();
+            return _mapper.Map(borrowEntities);
+        }
+
         public bool Add(BorrowDto borrowDto)
         {
             var borrowEntity = _mapper.Map(borrowDto);

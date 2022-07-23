@@ -16,7 +16,7 @@ namespace LibraryManager
 
         public IActionResult List()
         {
-            var borrowDtos = _borrowManager.GetAll();
+            var borrowDtos = _borrowManager.GetAllCurrentBorrows();
             var borrows = _mapper.Map(borrowDtos);
 
             return View(borrows);
