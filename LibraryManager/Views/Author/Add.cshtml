@@ -18,13 +18,7 @@
     <button type="submit" class="btn btn-success mt-4">Add</button>
 </form>
 
-<p class="text-danger mt-1 invisible" id="fail-info">Adding new author failed. Check if all fields are filled.</p>
-
-@{
-    if((bool)ViewData["failInformation"])
-    {
-        <script>
-            document.getElementById("fail-info").classList.remove("invisible");
-        </script>
-    }
+@if((bool)ViewData["failInformation"])
+{
+    <p class="text-danger mt-1 invisible" id="fail-info">Adding new author failed. Check if all fields are filled.</p>
 }
