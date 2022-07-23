@@ -59,6 +59,7 @@
             return _mapper.Map(bookEntity);
         }
 
+
         public bool Delete(int bookId)
         {
             return _bookRepository.Delete(bookId);

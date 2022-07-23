@@ -19,7 +19,7 @@
 </h1> 
 <h5>Author: <i class="fw-normal">@(Model.Author.FirstName + " " + Model.Author.LastName)</i></h5>
 <h5>Publication year: <i class="fw-normal">@Model.PublishYear</i></h5>
-
+<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Book", new {bookId = Model.Id})'"><small class="text-danger fw-bold">Delete</small></a>
 <hr />
 
     @if(Model.IsBorrowed)

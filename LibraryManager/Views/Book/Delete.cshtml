@@ -1,0 +1,10 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "Book deleting";
+}
+
+<div class="text-center">
+    <p>Are you sure you want to delete <b>@Model.Title</b> book with id <b>@Model.Id</b> by <b>@(Model.Author.FirstName + Model.Author.LastName)</b> and its all borrows?</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteBook", "Book", new {bookId = Model.Id})'">Yes</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Book")'">No</button>
+</div>

@@ -25,3 +25,7 @@ tbody tr:hover{
     background-color: gainsboro;
     cursor: pointer;
 }
+
+a{
+    cursor: pointer;
+}

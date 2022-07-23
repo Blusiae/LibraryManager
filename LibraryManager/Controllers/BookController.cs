@@ -27,10 +27,11 @@ namespace LibraryManager
             return View(book);
         }
 
-        public IActionResult List(string filterString, bool borrowedOnly = false)
+        public IActionResult List(string filterString, bool borrowedOnly = false, bool bookHasBorrowsInfo = false)
         {
             var bookDtos = _bookManager.GetAll(filterString, borrowedOnly);
             var books = _mapper.Map(bookDtos);
+            ViewData["bookHasBorrowsInfo"] = bookHasBorrowsInfo;
             return View(books);
         }
 
@@ -52,6 +53,19 @@ namespace LibraryManager
             }
 
             return RedirectToAction("Add", new {failInformation = true});
+        }
+
+        public IActionResult Delete(int bookId)
+        {
+            var bookDto = _bookManager.GetById(bookId);
+            var book = _mapper.Map(bookDto);
+            return View(book);
+        }
+
+        public IActionResult DeleteBook(int bookId)
+        {
+            _bookManager.Delete(bookId);
+            return RedirectToAction("List");
         }
     }
 }
