@@ -11,13 +11,17 @@
             _mapper = mapper;
         }
 
-        public List<BookDto> GetAll(string filterString, bool borrowedOnly) //filterString is book title written in search box.
+        public List<BookDto> GetAll(string filterString, bool borrowedOnly, bool unborrowedOnly) //filterString is book title written in search box.
         {
             var bookEntities = _bookRepository.GetAll().ToList();
 
             if(borrowedOnly)
             {
                 bookEntities = bookEntities.Where(x => x.IsBorrowed).ToList();
+            }
+            else if(unborrowedOnly)
+            {
+                bookEntities = bookEntities.Where(x => !x.IsBorrowed).ToList();
             }
 
             if (!string.IsNullOrEmpty(filterString))

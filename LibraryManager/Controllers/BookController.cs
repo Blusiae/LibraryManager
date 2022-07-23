@@ -27,9 +27,9 @@ namespace LibraryManager
             return View(book);
         }
 
-        public IActionResult List(string filterString, bool borrowedOnly = false, bool bookHasBorrowsInfo = false)
+        public IActionResult List(string filterString, bool borrowedOnly = false, bool unborrowedOnly = false, bool bookHasBorrowsInfo = false)
         {
-            var bookDtos = _bookManager.GetAll(filterString, borrowedOnly);
+            var bookDtos = _bookManager.GetAll(filterString, borrowedOnly, unborrowedOnly);
             var books = _mapper.Map(bookDtos);
             ViewData["bookHasBorrowsInfo"] = bookHasBorrowsInfo;
             return View(books);
