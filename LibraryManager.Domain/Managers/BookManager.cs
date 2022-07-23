@@ -63,6 +63,16 @@
             return _mapper.Map(bookEntity);
         }
 
+        public bool Borrow(int id)
+        {
+            return _bookRepository.Borrow(id);
+        }
+
+        public bool Unborrow(int id)
+        {
+            return _bookRepository.Unborrow(id);
+        }
+
 
         public bool Delete(int bookId)
         {

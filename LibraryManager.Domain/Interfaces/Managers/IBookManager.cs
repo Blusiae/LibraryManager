@@ -6,6 +6,8 @@
         int GetBooksCountByAuthorId(int authorId);
         bool Add(BookDto bookDto, int authorId);
         BookDto GetById(int id);
+        bool Borrow(int id);
+        bool Unborrow(int id);
         bool Delete(int bookId);
     }
 }

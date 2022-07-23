@@ -1,0 +1,39 @@
+﻿@model BorrowViewModel
+@{
+    ViewData["Title"] = "Add new borrow";
+    var books = ViewData["Books"] as IEnumerable<BookViewModel>;
+    var readers = ViewData["Readers"] as IEnumerable<ReaderViewModel>;
+}
+
+<h2>Add new borrow</h2>
+<hr />
+
+<form asp-controller="Borrow" asp-action="Add">
+    <div class="form-group">
+        <label for="book">Book</label>
+        <select class="form-select w-75" id="book" name="bookId" required>
+            @foreach(var book in books)
+            {
+                <option value="@book.Id">
+                    @book.Title
+                </option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="reader">Reader</label>
+        <select class="form-select w-75" id="reader" name="readerId" required>
+            @foreach(var reader in readers)
+            {
+                <option value="@reader.Id">
+                    @(reader.FirstName + " " + reader.LastName)
+                </option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="borrow-date">Borrow date</label>
+        <input type="date" class="form-control" id="borrow-date" name="BorrowDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" max="@DateTime.Today.ToString("yyyy-MM-dd")" required/>
+    </div>
+    <button type="submit" class="btn btn-success mt-4">Add</button>
+</form>
