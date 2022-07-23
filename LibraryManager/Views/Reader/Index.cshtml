@@ -64,7 +64,7 @@
             <td>@borrow.Book.Title</td>
             <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
             <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
-            <td>@((DateTime)borrow.ReturnDate).ToString("dd MMMM yyyy")</td>
+            <td>@(((DateTime)borrow.ReturnDate).ToString("dd MMMM yyyy"))</td>
         </tr>
         }
     </tbody>
