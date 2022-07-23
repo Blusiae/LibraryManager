@@ -2,9 +2,10 @@
 {
     public class ReaderViewModel
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public DateTime Birthdate { get; set; }
-        public List<BorrowViewModel> Borrows { get; set; }
+        public List<BorrowViewModel>? Borrows { get; set; }
     }
 }
