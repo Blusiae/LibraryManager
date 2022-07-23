@@ -7,7 +7,7 @@
 
 <hr />
 
-<button class="btn btn-success" asp-controller="Reader" asp-action="Add"><small>+ Add new</small></button>
+<a class="text-success fw-bold text-decoration-none" asp-controller="Reader" asp-action="Add"><small>+ Add new</small></a>
 
 <table class="table">
     <thead>
@@ -20,7 +20,7 @@
     <tbody>
         @foreach(var reader in Model)
         {
-            <tr onclick="location.href = '@Url.Action("Index", "Reader")'">
+            <tr onclick="location.href = '@Url.Action("Index", "Reader", new {readerId = reader.Id})'">
                 <td>@reader.FirstName</td>
                 <td>@reader.LastName</td>
                 <td>@reader.Birthdate.ToString("dd MMMM yyyy")</td>

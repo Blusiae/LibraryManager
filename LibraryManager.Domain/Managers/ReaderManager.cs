@@ -23,8 +23,19 @@
             return _mapper.Map(readerEntities);
         }
 
+        public ReaderDto GetById(int readerId)
+        {
+            var readeryEntity = _readerRepository.GetById(readerId);
+            return _mapper.Map(readeryEntity);
+        }
+
         public bool Add(ReaderDto readerDto)
         {
+            if (string.IsNullOrEmpty(readerDto.FirstName) || string.IsNullOrEmpty(readerDto.LastName))
+            {
+                return false;
+            }
+
             var readerEntity = _mapper.Map(readerDto);
             return _readerRepository.Add(readerEntity);
         }

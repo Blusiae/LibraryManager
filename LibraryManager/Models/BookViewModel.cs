@@ -7,6 +7,6 @@
         public int PublishYear { get; set; }
         public bool IsBorrowed { get; set; }
         public AuthorViewModel Author { get; set; } 
-        public List<BorrowViewModel> Borrows { get; set; }
+        public List<BorrowViewModel>? Borrows { get; set; }
     }
 }

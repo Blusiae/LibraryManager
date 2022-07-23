@@ -1,0 +1,10 @@
+﻿@model ReaderViewModel
+@{
+    ViewData["Title"] = "Reader deleting";
+}
+
+<div class="text-center">
+    <p>Are you sure you want to delete <b>@(Model.FirstName + " " + Model.LastName)</b> who's id is <b>@Model.Id</b> born at @Model.Birthdate.ToString("dd MMMM yyyy") and all their borrows?</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteReader", "Reader", new {readerId = Model.Id})'">Yes</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Reader")'">No</button>
+</div>

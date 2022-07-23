@@ -1,16 +1,22 @@
-﻿@{
+﻿@model ReaderViewModel
+@{
+    ViewData["Title"] = Model.FirstName + " " + Model.LastName;
+    var borrows = ViewData["Borrows"] as IEnumerable<BorrowViewModel>;
+
+    var currentBorrows = borrows.Where(x => !x.IsReturned);
+    var borrowsHistory = borrows.Where(x => x.IsReturned);
+
 }
 
 <h1>
-    Readers's name
-    <small class="text-muted fw-light">#X</small>
+    @(Model.FirstName + " " + Model.LastName)
+    <small class="text-muted fw-light">#@Model.Id</small>
 </h1> 
-<h5>Birthdate: <i class="fw-normal">00-00-0000</i></h5>
-
+<h5>Birthdate: <i class="fw-normal">@Model.Birthdate.ToString("dd MMMM yyyy")</i></h5>
+<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Reader", new {readerId = Model.Id})'"><small class="text-danger fw-bold">Delete</small></a>
 <hr />
 
-<h4>Current borrows <small class="text-muted">(3)</small></h4>
-
+<h4>Current borrows <small class="text-muted">(@currentBorrows.Count())</small></h4>
 <hr />
 
 <table class="table">
@@ -22,23 +28,21 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
+        @foreach(var borrow in currentBorrows)
+        {
+        <tr class="not-clickable">
+            <td>@borrow.Book.Title</td>
+            <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
+            <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
         </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
+        }
     </tbody>
 </table>
+
+@if(!currentBorrows.Any())
+{
+    <p>Nothing to show here!</p>
+}
 
 <h4>History of borrows</h4>
 
@@ -54,23 +58,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
+        @foreach(var borrow in borrowsHistory)
+        {
+        <tr class="not-clickable">
+            <td>@borrow.Book.Title</td>
+            <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
+            <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
+            <td>@((DateTime)borrow.ReturnDate).ToString("dd MMMM yyyy")</td>
         </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
-        <tr>
-            <td>Harry Potter</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-            <td>00-00-0000</td>
-        </tr>
+        }
     </tbody>
 </table>
+
+@if(!borrowsHistory.Any())
+{
+    <p>Nothing to show here!</p>
+}
