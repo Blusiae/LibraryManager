@@ -1,20 +1,20 @@
 ﻿@model List<ReaderViewModel>
 @{
-    ViewData["Title"] = "Readers list";
+    ViewData["Title"] = Resources.Reader.List_Title;
 }
 
-<h1>Readers</h1>
+<h1>@Resources.Reader.List_Title</h1>
 
 <hr />
 
-<a class="text-success fw-bold text-decoration-none" asp-controller="Reader" asp-action="Add"><small>+ Add new</small></a>
+<a class="text-success fw-bold text-decoration-none" asp-controller="Reader" asp-action="Add"><small>+ @Resources.Common.Add_New</small></a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Birthdate</th>
+            <th>@Resources.Common.FirstName</th>
+            <th>@Resources.Common.LastName</th>
+            <th>@Resources.Reader.Birthdate</th>
         </tr>
     </thead>
     <tbody>
@@ -31,5 +31,5 @@
 
 @if(!Model.Any())
 {
-    <p>Nothing to show here!</p>
+    <p>@Resources.Common.Nothing_To_Show_Here</p>
 }

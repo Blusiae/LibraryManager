@@ -1,23 +1,23 @@
 ﻿@model ReaderViewModel
 @{
-    ViewData["Title"] = "Add new reader";
+    ViewData["Title"] = Resources.Reader.Add_Title;
 }
 
-<h2>Add new reader</h2>
+<h2>@Resources.Reader.Add_Title</h2>
 <form asp-controller="Reader" asp-action="Add">
     <div class="form-group">
-        <label for="first-name">First name</label>
+        <label for="first-name">@Resources.Common.FirstName</label>
         <input type="text" class="form-control" id="first-name" name="FirstName" required />
     </div>
     <div class="form-group">
-        <label for="last-name">Last name</label>
+        <label for="last-name">@Resources.Common.LastName</label>
         <input type="text" class="form-control" id="last-name" name="LastName" required />
     </div>
     <div class="form-group">
-        <label for="birthdate">Birthdate</label>
+        <label for="birthdate">@Resources.Reader.Birthdate</label>
         <input type="date" class="form-control" id="birthdate" name="Birthdate" max="@DateTime.Today.ToString("yyyy-MM-dd")" required/>
     </div>
-    <button type="submit" class="btn btn-success mt-4">Add</button>
+    <button type="submit" class="btn btn-success mt-4">@Resources.Common.Add</button>
 </form>
 
 

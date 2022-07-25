@@ -169,15 +169,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to History of borrows.
-        /// </summary>
-        public static string History_Of_Borrows {
-            get {
-                return ResourceManager.GetString("History_Of_Borrows", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The book is currently.
         /// </summary>
         public static string Is_Borrowed_Info {

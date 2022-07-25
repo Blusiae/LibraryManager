@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string Actions {
+            get {
+                return ResourceManager.GetString("Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string Add {
@@ -79,11 +88,38 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Borrow date.
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book&apos;s title.
+        /// </summary>
+        public static string Book_Title {
+            get {
+                return ResourceManager.GetString("Book_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of borrow.
         /// </summary>
         public static string Borrow_Date {
             get {
                 return ResourceManager.GetString("Borrow_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current borrows.
+        /// </summary>
+        public static string Current_Borrows {
+            get {
+                return ResourceManager.GetString("Current_Borrows", resourceCulture);
             }
         }
         
@@ -102,6 +138,15 @@ namespace Resources {
         public static string FirstName {
             get {
                 return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History of borrows.
+        /// </summary>
+        public static string History_Of_Borrows {
+            get {
+                return ResourceManager.GetString("History_Of_Borrows", resourceCulture);
             }
         }
         

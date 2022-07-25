@@ -1,10 +1,10 @@
 ﻿@model ReaderViewModel
 @{
-    ViewData["Title"] = "Reader deleting";
+    ViewData["Title"] = Resources.Reader.Delete_Title;
 }
 
 <div class="text-center">
-    <p>Are you sure you want to delete <b>@(Model.FirstName + " " + Model.LastName)</b> who's id is <b>@Model.Id</b> born at @Model.Birthdate.ToString("dd MMMM yyyy") and all their borrows?</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteReader", "Reader", new {readerId = Model.Id})'">Yes</button> 
-    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Reader")'">No</button>
+    <p>@Resources.Reader.Delete_Confirm_1 <b>@(Model.FirstName + " " + Model.LastName)</b> @Resources.Reader.Delete_Confirm_2 <b>@Model.Id</b> @Resources.Reader.Delete_Confirm_3 @Model.Birthdate.ToString("dd MMMM yyyy") @Resources.Reader.Delete_Confirm_4?</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteReader", "Reader", new {readerId = Model.Id})'">@Resources.Common.Yes</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Reader")'">@Resources.Common.No</button>
 </div>
