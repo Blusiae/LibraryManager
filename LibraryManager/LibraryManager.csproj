@@ -20,4 +20,60 @@
     <ProjectReference Include="..\LibraryManager.Domain\LibraryManager.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Resources\Book.Designer.cs">
+      <DependentUpon>Book.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Home.pl.Designer.cs">
+      <DependentUpon>Home.pl.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Home.Designer.cs">
+      <DependentUpon>Home.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Global.Designer.cs">
+      <DependentUpon>Global.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Common.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Book.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <LastGenOutput>Book.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Home.pl.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <LastGenOutput>Home.pl.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Home.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Global.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

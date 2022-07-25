@@ -1,10 +1,11 @@
 ﻿@model BookViewModel
 @{
-    ViewData["Title"] = "Book deleting";
+    ViewData["Title"] = Resources.Book.Delete_Title;
 }
 
 <div class="text-center">
-    <p>Are you sure you want to delete <b>@Model.Title</b> book with id <b>@Model.Id</b> by <b>@(Model.Author.FirstName + Model.Author.LastName)</b> and its all borrows?</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteBook", "Book", new {bookId = Model.Id})'">Yes</button> 
-    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Book")'">No</button>
+    <p>@Resources.Book.Delete_Confirm_1 <b>@Model.Title</b> @Resources.Book.Delete_Confirm_2 <b>@Model.Id</b> @Resources.Book.Delete_Confirm_3
+        <b>@(Model.Author.FirstName + Model.Author.LastName)</b> @Resources.Book.Delete_Confirm_4</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteBook", "Book", new {bookId = Model.Id})'">@Resources.Common.Yes</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Book")'">@Resources.Common.No</button>
 </div>
