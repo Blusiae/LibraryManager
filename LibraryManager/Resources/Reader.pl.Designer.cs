@@ -22,14 +22,14 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Book {
+    public class Reader___Copy {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Book() {
+        internal Reader___Copy() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LibraryManager.Resources.Book", typeof(Book).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LibraryManager.Resources.Reader - Copy", typeof(Reader___Copy).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new book.
+        ///   Looks up a localized string similar to Add new reader.
         /// </summary>
         public static string Add_Title {
             get {
@@ -70,56 +70,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Author.
+        ///   Looks up a localized string similar to Birthdate.
         /// </summary>
-        public static string Author {
+        public static string Birthdate {
             get {
-                return ResourceManager.GetString("Author", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Borrowed.
-        /// </summary>
-        public static string Borrowed {
-            get {
-                return ResourceManager.GetString("Borrowed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to borrowed.
-        /// </summary>
-        public static string Borrowed_Info_1 {
-            get {
-                return ResourceManager.GetString("Borrowed_Info_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to by.
-        /// </summary>
-        public static string Borrowed_Info_2 {
-            get {
-                return ResourceManager.GetString("Borrowed_Info_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to since.
-        /// </summary>
-        public static string Borrowed_Info_3 {
-            get {
-                return ResourceManager.GetString("Borrowed_Info_3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to and should be returned by.
-        /// </summary>
-        public static string Borrowed_Info_4 {
-            get {
-                return ResourceManager.GetString("Borrowed_Info_4", resourceCulture);
+                return ResourceManager.GetString("Birthdate", resourceCulture);
             }
         }
         
@@ -133,7 +88,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to book with id.
+        ///   Looks up a localized string similar to who&apos;s id is.
         /// </summary>
         public static string Delete_Confirm_2 {
             get {
@@ -142,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to by.
+        ///   Looks up a localized string similar to born at.
         /// </summary>
         public static string Delete_Confirm_3 {
             get {
@@ -151,7 +106,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and its all borrows?.
+        ///   Looks up a localized string similar to and all their borrows.
         /// </summary>
         public static string Delete_Confirm_4 {
             get {
@@ -160,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Book deleting.
+        ///   Looks up a localized string similar to Reader deleting.
         /// </summary>
         public static string Delete_Title {
             get {
@@ -169,74 +124,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The book is currently.
-        /// </summary>
-        public static string Is_Borrowed_Info {
-            get {
-                return ResourceManager.GetString("Is_Borrowed_Info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Books list.
+        ///   Looks up a localized string similar to Readers list.
         /// </summary>
         public static string List_Title {
             get {
                 return ResourceManager.GetString("List_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage authors.
-        /// </summary>
-        public static string Manage_Authors {
-            get {
-                return ResourceManager.GetString("Manage_Authors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Publication year.
-        /// </summary>
-        public static string Publication_Year {
-            get {
-                return ResourceManager.GetString("Publication_Year", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status.
-        /// </summary>
-        public static string Status {
-            get {
-                return ResourceManager.GetString("Status", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Title.
-        /// </summary>
-        public static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unborrowed.
-        /// </summary>
-        public static string Unborrowed {
-            get {
-                return ResourceManager.GetString("Unborrowed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to unborrowed.
-        /// </summary>
-        public static string Unborrowed_Info {
-            get {
-                return ResourceManager.GetString("Unborrowed_Info", resourceCulture);
             }
         }
     }

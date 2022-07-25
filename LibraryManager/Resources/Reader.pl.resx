@@ -118,63 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add_Title" xml:space="preserve">
-    <value>Add new book</value>
+    <value>Dodaj nowego czytelnika</value>
   </data>
-  <data name="Author" xml:space="preserve">
-    <value>Author</value>
-  </data>
-  <data name="Borrowed" xml:space="preserve">
-    <value>Borrowed</value>
-  </data>
-  <data name="Borrowed_Info_1" xml:space="preserve">
-    <value>borrowed</value>
-  </data>
-  <data name="Borrowed_Info_2" xml:space="preserve">
-    <value>by</value>
-  </data>
-  <data name="Borrowed_Info_3" xml:space="preserve">
-    <value>since</value>
-  </data>
-  <data name="Borrowed_Info_4" xml:space="preserve">
-    <value>and should be returned by</value>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Data urodzenia</value>
   </data>
   <data name="Delete_Confirm_1" xml:space="preserve">
-    <value>Are you sure you want to delete</value>
+    <value>Czy jesteś pewny/a, że chcesz usunąć czytelnika </value>
   </data>
   <data name="Delete_Confirm_2" xml:space="preserve">
-    <value>book with id</value>
+    <value>o id</value>
   </data>
   <data name="Delete_Confirm_3" xml:space="preserve">
-    <value>by</value>
+    <value>urodzonego dnia</value>
   </data>
   <data name="Delete_Confirm_4" xml:space="preserve">
-    <value>and its all borrows?</value>
+    <value>i wszystkie jej/jego wypożyczenia?</value>
   </data>
   <data name="Delete_Title" xml:space="preserve">
-    <value>Book deleting</value>
-  </data>
-  <data name="Is_Borrowed_Info" xml:space="preserve">
-    <value>The book is currently</value>
+    <value>Usuwanie czytelnika</value>
   </data>
   <data name="List_Title" xml:space="preserve">
-    <value>Books list</value>
-  </data>
-  <data name="Manage_Authors" xml:space="preserve">
-    <value>Manage authors</value>
-  </data>
-  <data name="Publication_Year" xml:space="preserve">
-    <value>Publication year</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="Unborrowed" xml:space="preserve">
-    <value>Unborrowed</value>
-  </data>
-  <data name="Unborrowed_Info" xml:space="preserve">
-    <value>unborrowed</value>
+    <value>Lista czytelników</value>
   </data>
 </root>

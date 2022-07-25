@@ -118,63 +118,63 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add_Title" xml:space="preserve">
-    <value>Add new book</value>
+    <value>Dodaj nową książkę</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Author</value>
+    <value>Autor</value>
   </data>
   <data name="Borrowed" xml:space="preserve">
-    <value>Borrowed</value>
+    <value>Wypożyczona</value>
   </data>
   <data name="Borrowed_Info_1" xml:space="preserve">
-    <value>borrowed</value>
+    <value>wypożyczona</value>
   </data>
   <data name="Borrowed_Info_2" xml:space="preserve">
-    <value>by</value>
+    <value>przez</value>
   </data>
   <data name="Borrowed_Info_3" xml:space="preserve">
-    <value>since</value>
+    <value>od</value>
   </data>
   <data name="Borrowed_Info_4" xml:space="preserve">
-    <value>and should be returned by</value>
+    <value>i powinna zostać oddana do</value>
   </data>
   <data name="Delete_Confirm_1" xml:space="preserve">
-    <value>Are you sure you want to delete</value>
+    <value>Czy jesteś pewny/a, że chcesz usunąć książkę pod tytułem</value>
   </data>
   <data name="Delete_Confirm_2" xml:space="preserve">
-    <value>book with id</value>
+    <value>o id</value>
   </data>
   <data name="Delete_Confirm_3" xml:space="preserve">
-    <value>by</value>
+    <value>napisaną przez</value>
   </data>
   <data name="Delete_Confirm_4" xml:space="preserve">
-    <value>and its all borrows?</value>
+    <value>i wszystkie powiązane z nią wypożyczenia?</value>
   </data>
   <data name="Delete_Title" xml:space="preserve">
-    <value>Book deleting</value>
+    <value>Usuwanie książki</value>
   </data>
   <data name="Is_Borrowed_Info" xml:space="preserve">
-    <value>The book is currently</value>
+    <value>Ta książka jest aktualnie</value>
   </data>
   <data name="List_Title" xml:space="preserve">
-    <value>Books list</value>
+    <value>Lista książek</value>
   </data>
   <data name="Manage_Authors" xml:space="preserve">
-    <value>Manage authors</value>
+    <value>Zarządzaj autorami</value>
   </data>
   <data name="Publication_Year" xml:space="preserve">
-    <value>Publication year</value>
+    <value>Data wydania</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Status</value>
+    <value>Stan</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Title</value>
+    <value>Tytuł</value>
   </data>
   <data name="Unborrowed" xml:space="preserve">
-    <value>Unborrowed</value>
+    <value>Niewypożyczona</value>
   </data>
   <data name="Unborrowed_Info" xml:space="preserve">
-    <value>unborrowed</value>
+    <value>niewypożyczona</value>
   </data>
 </root>

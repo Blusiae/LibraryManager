@@ -117,64 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Title" xml:space="preserve">
-    <value>Add new book</value>
+  <data name="Actions" xml:space="preserve">
+    <value>Akcje</value>
   </data>
-  <data name="Author" xml:space="preserve">
-    <value>Author</value>
+  <data name="Add" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="Borrowed" xml:space="preserve">
-    <value>Borrowed</value>
+  <data name="Add_New" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="Borrowed_Info_1" xml:space="preserve">
-    <value>borrowed</value>
+  <data name="Book" xml:space="preserve">
+    <value>Książka</value>
   </data>
-  <data name="Borrowed_Info_2" xml:space="preserve">
-    <value>by</value>
+  <data name="Book_Title" xml:space="preserve">
+    <value>Tytuł książki</value>
   </data>
-  <data name="Borrowed_Info_3" xml:space="preserve">
-    <value>since</value>
+  <data name="Borrow_Date" xml:space="preserve">
+    <value>Data wypożyczenia</value>
   </data>
-  <data name="Borrowed_Info_4" xml:space="preserve">
-    <value>and should be returned by</value>
+  <data name="Current_Borrows" xml:space="preserve">
+    <value>Aktywne wypożyczenia</value>
   </data>
-  <data name="Delete_Confirm_1" xml:space="preserve">
-    <value>Are you sure you want to delete</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
   </data>
-  <data name="Delete_Confirm_2" xml:space="preserve">
-    <value>book with id</value>
+  <data name="FirstName" xml:space="preserve">
+    <value>Imię</value>
   </data>
-  <data name="Delete_Confirm_3" xml:space="preserve">
-    <value>by</value>
+  <data name="History_Of_Borrows" xml:space="preserve">
+    <value>Historia wypożyczeń</value>
   </data>
-  <data name="Delete_Confirm_4" xml:space="preserve">
-    <value>and its all borrows?</value>
+  <data name="LastName" xml:space="preserve">
+    <value>Nazwisko</value>
   </data>
-  <data name="Delete_Title" xml:space="preserve">
-    <value>Book deleting</value>
+  <data name="No" xml:space="preserve">
+    <value>Nie</value>
   </data>
-  <data name="Is_Borrowed_Info" xml:space="preserve">
-    <value>The book is currently</value>
+  <data name="Nothing_To_Show_Here" xml:space="preserve">
+    <value>Brak danych do pokazania!</value>
   </data>
-  <data name="List_Title" xml:space="preserve">
-    <value>Books list</value>
+  <data name="Reader" xml:space="preserve">
+    <value>Czytelnik</value>
   </data>
-  <data name="Manage_Authors" xml:space="preserve">
-    <value>Manage authors</value>
+  <data name="Return_Date" xml:space="preserve">
+    <value>Data zwrotu</value>
   </data>
-  <data name="Publication_Year" xml:space="preserve">
-    <value>Publication year</value>
+  <data name="Return_Deadline" xml:space="preserve">
+    <value>Termin zwrotu</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="Unborrowed" xml:space="preserve">
-    <value>Unborrowed</value>
-  </data>
-  <data name="Unborrowed_Info" xml:space="preserve">
-    <value>unborrowed</value>
+  <data name="Yes" xml:space="preserve">
+    <value>Tak</value>
   </data>
 </root>
