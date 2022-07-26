@@ -1,5 +1,18 @@
-﻿@using Microsoft.AspNetCore.Mvc.Localization
+﻿@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
 @inject IViewLocalizer Localizer;
+
+@inject IOptions<RequestLocalizationOptions> LocalizationOptions
+
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocalizationOptions.Value.SupportedUICultures
+                        .Select(x => new SelectListItem { Value = x.Name, Text = x.NativeName })
+                        .ToList();
+}
 
 <!DOCTYPE html>
 <html lang="@Localizer["Lang"]">
@@ -35,6 +48,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Borrow" asp-action="List">@Localizer["Borrows"]</a>
                         </li>
                     </ul>
+                    <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                        <select id="culture" name="culture" class="form-select" onchange="this.form.submit();" 
+                            asp-items="cultureItems" asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                        </select>
+                    </form>
                 </div>
             </div>
         </nav>

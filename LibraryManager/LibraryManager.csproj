@@ -21,19 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Common.pl.Designer.cs">
-      <DependentUpon>Common.pl.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\Common.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Common.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Resources\Views\Author\Add.en-US.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
@@ -45,11 +32,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Author\List.pl-PL.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Common.pl.resx">
-      <CustomToolNamespace></CustomToolNamespace>
-      <LastGenOutput>Common.pl.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Book\Add.en-US.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>
@@ -86,11 +68,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Borrow\List.pl-PL.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Common.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Common.Designer.cs</LastGenOutput>
-      <CustomToolNamespace></CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Reader\Add.en-US.resx">
       <CustomToolNamespace>Resources</CustomToolNamespace>

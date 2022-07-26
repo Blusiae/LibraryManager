@@ -42,6 +42,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
     var cultures = new CultureInfo[]
     {
+        new CultureInfo("en-US"),
         new CultureInfo("pl-PL")
     };
 
