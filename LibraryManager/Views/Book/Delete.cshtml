@@ -1,10 +1,13 @@
-﻿@model BookViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model BookViewModel
 @{
-    ViewData["Title"] = "Book deleting";
+    ViewData["Title"] = Localizer["Title"];
 }
 
 <div class="text-center">
-    <p>Are you sure you want to delete <b>@Model.Title</b> book with id <b>@Model.Id</b> by <b>@(Model.Author.FirstName + Model.Author.LastName)</b> and its all borrows?</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteBook", "Book", new {bookId = Model.Id})'">Yes</button> 
-    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Book")'">No</button>
+    <p>@Localizer["Delete_Confirm_1"] <b>@Model.Title</b> @Localizer["Delete_Confirm_2"] <b>@Model.Id</b> @Localizer["Delete_Confirm_3"]
+        <b>@(Model.Author.FirstName + Model.Author.LastName)</b> @Localizer["Delete_Confirm_4"]</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteBook", "Book", new {bookId = Model.Id})'">@Localizer["Yes"]</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Book")'">@Localizer["No"]</button>
 </div>

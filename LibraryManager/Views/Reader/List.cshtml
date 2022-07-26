@@ -1,20 +1,22 @@
-﻿@model List<ReaderViewModel>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model List<ReaderViewModel>
 @{
-    ViewData["Title"] = "Readers list";
+    ViewData["Title"] = Localizer["Title"];
 }
 
-<h1>Readers</h1>
+<h1>@Localizer["Title"]</h1>
 
 <hr />
 
-<a class="text-success fw-bold text-decoration-none" asp-controller="Reader" asp-action="Add"><small>+ Add new</small></a>
+<a class="text-success fw-bold text-decoration-none" asp-controller="Reader" asp-action="Add"><small>+ @Localizer["Add_New"]</small></a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Birthdate</th>
+            <th>@Localizer["First_Name"]</th>
+            <th>@Localizer["Last_Name"]</th>
+            <th>@Localizer["Birthdate"]</th>
         </tr>
     </thead>
     <tbody>
@@ -31,5 +33,5 @@
 
 @if(!Model.Any())
 {
-    <p>Nothing to show here!</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }

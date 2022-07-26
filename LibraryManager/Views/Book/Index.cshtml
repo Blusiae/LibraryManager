@@ -1,5 +1,8 @@
-﻿@model BookViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model BookViewModel
 @{
+    ViewData["Title"] = Model.Title;
     var borrows = ViewData["Borrows"] as List<BorrowViewModel>;
     ReaderViewModel reader = new ReaderViewModel();
     BorrowViewModel currentBorrow = new BorrowViewModel(); 
@@ -17,33 +20,33 @@
     @Model.Title
     <small class="text-muted fw-light">#@Model.Id</small>
 </h1> 
-<h5>Author: <i class="fw-normal">@(Model.Author.FirstName + " " + Model.Author.LastName)</i></h5>
-<h5>Publication year: <i class="fw-normal">@Model.PublishYear</i></h5>
-<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Book", new {bookId = Model.Id})'"><small class="text-danger fw-bold">Delete</small></a>
+<h5>@Localizer["Author"]: <i class="fw-normal">@(Model.Author.FirstName + " " + Model.Author.LastName)</i></h5>
+<h5>@Localizer["Publication_Year"]: <i class="fw-normal">@Model.PublishYear</i></h5>
+<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Book", new {bookId = Model.Id})'"><small class="text-danger fw-bold">@Localizer["Delete"]</small></a>
 <hr />
 
     @if(Model.IsBorrowed)
     {
-        <p>The book is currently <text class="text-danger fw-bold">borrowed</text>
-        by <b>@(reader.FirstName + " " + reader.LastName)</b> since @currentBorrow.BorrowDate.ToString("dd MMMM yyyy") 
-        and should be returned by @currentBorrow.ReturnDeadline.ToString("dd MMMM yyyy").</p>
+        <p>@Localizer["Is_Borrowed_Info"] <text class="text-danger fw-bold">@Localizer["Borrowed_Info_1"]</text>
+        @Localizer["Borrowed_Info_2"] <b>@(reader.FirstName + " " + reader.LastName)</b> @Localizer["Borrowed_Info_3"] @currentBorrow.BorrowDate.ToString("dd MMMM yyyy") 
+        @Localizer["Borrowed_Info_4"] @currentBorrow.ReturnDeadline.ToString("dd MMMM yyyy").</p>
     }
     else
     {
-        <p>The book is currently <text class="text-success fw-bold">unborrowed</text>.</p>
+        <p>@Localizer["Is_Borrowed_Info"] <text class="text-success fw-bold">@Localizer["Unborrowed_Info"]</text>.</p>
     }
 
-<h4>History of borrows</h4>
+<h4>@Localizer["History_Of_Borrows"]</h4>
 
 <hr />
 
 <table class="table">
     <thead>
         <tr>
-            <th>Reader</th>
-            <th>Borrow date</th>
-            <th>Return deadline</th>
-            <th>Return date</th>
+            <th>@Localizer["Reader"]</th>
+            <th>@Localizer["Borrow_Date"]</th>
+            <th>@Localizer["Return_Deadline"]</th>
+            <th>@Localizer["Return_Date"]</th>
         </tr>
     </thead>
     <tbody>
@@ -61,5 +64,5 @@
 
 @if (borrowsHistory.Count == 0)
 {
-    <p>Nothing to show here!</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }

@@ -1,9 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer;
+@{
+    ViewData["Title"] = Localizer["Title"];
 }
 
 <div class="text-center">
-    <h1 class="display-4 mt-5">Welcome to the <b>LibraryManager!</b></h1>
-    <p>Choose a tab from menu bar to manage books, readers and current borrows or click the "Add Borrow" button to add a new borrow.</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("Add", "Borrow")'">Add Borrow</button>
+    <h1 class="display-4 mt-5">@Localizer["Greeting_Title"] <b>@Localizer["App_Name"]</b>!</h1>
+    <p>@Localizer["Greeting"]</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("Add", "Borrow")'">@Localizer["Add_Borrow"]</button>
 </div>

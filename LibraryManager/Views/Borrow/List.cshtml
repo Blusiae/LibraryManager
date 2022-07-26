@@ -1,22 +1,24 @@
-﻿@model List<BorrowViewModel>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model List<BorrowViewModel>
 @{
-    ViewData["Title"] = "Borrows list";
+    ViewData["Title"] = Localizer["Title"];
 }
 
-<h1>Current borrows</h1>
+<h1>@Localizer["Current_Borrows"]</h1>
 
 <hr />
 
-<a class="text-success fw-bold text-decoration-none" asp-controller="Borrow" asp-action="Add"><small>+ Add new</small></a>
+<a class="text-success fw-bold text-decoration-none" asp-controller="Borrow" asp-action="Add"><small>+ @Localizer["Add_New"]</small></a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Book's title</th>
-            <th>Borrower name</th>
-            <th>Date of borrow</th>
-            <th>Return deadline</th>
-            <th>Actions</th>
+            <th>@Localizer["Book_Title"]</th>
+            <th>@Localizer["Reader"]</th>
+            <th>@Localizer["Borrow_Date"]</th>
+            <th>@Localizer["Return_Deadline"]</th>
+            <th>@Localizer["Actions"]</th>
         </tr>
     </thead>
     <tbody>
@@ -28,12 +30,12 @@
                 <td>@borrow.BorrowDate.ToString("dd MMMM yyyy")</td>
                 <td>@borrow.ReturnDeadline.ToString("dd MMMM yyyy")</td>
                 <td>
-                    <button class="btn btn-sm transparent" onclick="location.href='@Url.Action("BookReturn", "Borrow", new {borrowId = borrow.Id, bookId = borrow.Book.Id})'" title="Return">
+                    <button class="btn btn-sm transparent" onclick="location.href='@Url.Action("BookReturn", "Borrow", new {borrowId = borrow.Id, bookId = borrow.Book.Id})'" title="@Localizer["Return"]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#198754" class="bi bi-check-lg" viewBox="0 0 16 16">
                           <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
                         </svg>
                     </button>
-                    <button class="btn btn-sm transparent" onclick="location.href='@Url.Action("Delete", "Borrow", new {borrowId = borrow.Id, bookId = borrow.Book.Id})'" title="Delete">
+                    <button class="btn btn-sm transparent" onclick="location.href='@Url.Action("Delete", "Borrow", new {borrowId = borrow.Id, bookId = borrow.Book.Id})'" title="@Localizer["Delete"]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc3545" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                           <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                         </svg>
@@ -46,5 +48,5 @@
 
 @if(!Model.Any())
 {
-    <p>Nothing to show here!</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }
