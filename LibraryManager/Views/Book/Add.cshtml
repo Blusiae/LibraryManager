@@ -1,23 +1,25 @@
-﻿@model BookViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model BookViewModel
 @{
-    ViewData["Title"] = Resources.Book.Add_Title;
+    ViewData["Title"] = Localizer["Title"];
     var authors = ViewData["Authors"] as IEnumerable<AuthorViewModel>;
 }
 
-<h2>@Resources.Book.Add_Title</h2>
+<h2>@Localizer["Title"]</h2>
 <hr />
 
 <form asp-controller="Book" asp-action="Add">
     <div class="form-group">
-        <label for="title">@Resources.Book.Title</label>
+        <label for="title">@Localizer["Book_Title"]</label>
         <input type="text" class="form-control" id="title" name="Title" required />
     </div>
     <div class="form-group">
-        <label for="publication-year">@Resources.Book.Publication_Year</label>
+        <label for="publication-year">@Localizer["Publication_Year"]</label>
         <input type="number" class="form-control" id="publication-year" name="PublishYear" max=@DateTime.Now.Year required/>
     </div>
     <div class="form-group">
-        <label for="author">@Resources.Book.Author</label>
+        <label for="author">@Localizer["Author"]</label>
         <div class="d-flex">
              <select class="form-select w-75" id="author" name="authorId">
                 @foreach(var author in authors)
@@ -27,11 +29,11 @@
                     </option>
                 }
             </select>
-            <a class="text-success ms-3 mt-1 fw-bold text-decoration-none" asp-controller="Author" asp-action="Add"><small>@Resources.Common.Add_New</small></a>
+            <a class="text-success ms-3 mt-1 fw-bold text-decoration-none" asp-controller="Author" asp-action="Add"><small>@Localizer["Add_New"]</small></a>
         </div>
-        <a asp-controller="Author" asp-action="List" class="text-decoration-none"><small class="text-danger fw-bold">@Resources.Book.Manage_Authors</small></a>
+        <a asp-controller="Author" asp-action="List" class="text-decoration-none"><small class="text-danger fw-bold">@Localizer["Manage_Authors"]</small></a>
     </div>
-    <button type="submit" class="btn btn-success mt-4">@Resources.Common.Add</button>
+    <button type="submit" class="btn btn-success mt-4">@Localizer["Add"]</button>
 </form>
 
 <p class="text-danger mt-1 invisible" id="fail-info">Adding new book failed. Check if all fields are filled.</p>

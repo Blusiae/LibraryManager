@@ -1,10 +1,12 @@
-﻿@model ReaderViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model ReaderViewModel
 @{
-    ViewData["Title"] = Resources.Reader.Delete_Title;
+    ViewData["Title"] = Localizer["Title"];
 }
 
 <div class="text-center">
-    <p>@Resources.Reader.Delete_Confirm_1 <b>@(Model.FirstName + " " + Model.LastName)</b> @Resources.Reader.Delete_Confirm_2 <b>@Model.Id</b> @Resources.Reader.Delete_Confirm_3 @Model.Birthdate.ToString("dd MMMM yyyy") @Resources.Reader.Delete_Confirm_4?</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteReader", "Reader", new {readerId = Model.Id})'">@Resources.Common.Yes</button> 
-    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Reader")'">@Resources.Common.No</button>
+    <p>@Localizer["Delete_Confirm_1"] <b>@(Model.FirstName + " " + Model.LastName)</b> @Localizer["Delete_Confirm_2"] <b>@Model.Id</b> @Localizer["Delete_Confirm_3"] @Model.Birthdate.ToString("dd MMMM yyyy") @Localizer["Delete_Confirm_4"]?</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("DeleteReader", "Reader", new {readerId = Model.Id})'">@Localizer["Yes"]</button> 
+    <button class="btn btn-danger ms-3" onclick="location.href = '@Url.Action("List", "Reader")'">@Localizer["No"]</button>
 </div>

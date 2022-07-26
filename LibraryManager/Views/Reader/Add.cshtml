@@ -1,23 +1,25 @@
-﻿@model ReaderViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model ReaderViewModel
 @{
-    ViewData["Title"] = Resources.Reader.Add_Title;
+    ViewData["Title"] = Localizer["Title"];
 }
 
-<h2>@Resources.Reader.Add_Title</h2>
+<h2>@Localizer["Title"]</h2>
 <form asp-controller="Reader" asp-action="Add">
     <div class="form-group">
-        <label for="first-name">@Resources.Common.FirstName</label>
+        <label for="first-name">@Localizer["First_Name"]</label>
         <input type="text" class="form-control" id="first-name" name="FirstName" required />
     </div>
     <div class="form-group">
-        <label for="last-name">@Resources.Common.LastName</label>
+        <label for="last-name">@Localizer["Last_Name"]</label>
         <input type="text" class="form-control" id="last-name" name="LastName" required />
     </div>
     <div class="form-group">
-        <label for="birthdate">@Resources.Reader.Birthdate</label>
+        <label for="birthdate">@Localizer["Birthdate"]</label>
         <input type="date" class="form-control" id="birthdate" name="Birthdate" max="@DateTime.Today.ToString("yyyy-MM-dd")" required/>
     </div>
-    <button type="submit" class="btn btn-success mt-4">@Resources.Common.Add</button>
+    <button type="submit" class="btn btn-success mt-4">@Localizer["Add"]</button>
 </form>
 
 

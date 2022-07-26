@@ -117,55 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Actions" xml:space="preserve">
-    <value>Akcje</value>
-  </data>
   <data name="Add" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="Add_New" xml:space="preserve">
-    <value>Dodaj</value>
+    <value>Add</value>
   </data>
   <data name="Book" xml:space="preserve">
-    <value>Książka</value>
-  </data>
-  <data name="Book_Title" xml:space="preserve">
-    <value>Tytuł książki</value>
+    <value>Book</value>
   </data>
   <data name="Borrow_Date" xml:space="preserve">
-    <value>Data wypożyczenia</value>
+    <value>Date of borrow</value>
   </data>
-  <data name="Current_Borrows" xml:space="preserve">
-    <value>Aktywne wypożyczenia</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Usuń</value>
-  </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>Imię</value>
-  </data>
-  <data name="History_Of_Borrows" xml:space="preserve">
-    <value>Historia wypożyczeń</value>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Nazwisko</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>Nie</value>
-  </data>
-  <data name="Nothing_To_Show_Here" xml:space="preserve">
-    <value>Brak danych do pokazania!</value>
+  <data name="List_Title" xml:space="preserve">
+    <value>Borrows list</value>
   </data>
   <data name="Reader" xml:space="preserve">
-    <value>Czytelnik</value>
+    <value>Reader</value>
   </data>
-  <data name="Return_Date" xml:space="preserve">
-    <value>Data zwrotu</value>
+  <data name="Return" xml:space="preserve">
+    <value>Return</value>
   </data>
-  <data name="Return_Deadline" xml:space="preserve">
-    <value>Termin zwrotu</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Tak</value>
+  <data name="Title" xml:space="preserve">
+    <value>Add new borrow</value>
   </data>
 </root>

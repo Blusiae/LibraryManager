@@ -1,4 +1,6 @@
-﻿@model ReaderViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model ReaderViewModel
 @{
     ViewData["Title"] = Model.FirstName + " " + Model.LastName;
     var borrows = ViewData["Borrows"] as IEnumerable<BorrowViewModel>;
@@ -12,19 +14,19 @@
     @(Model.FirstName + " " + Model.LastName)
     <small class="text-muted fw-light">#@Model.Id</small>
 </h1> 
-<h5>@Resources.Reader.Birthdate: <i class="fw-normal">@Model.Birthdate.ToString("dd MMMM yyyy")</i></h5>
-<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Reader", new {readerId = Model.Id})'"><small class="text-danger fw-bold">@Resources.Common.Delete</small></a>
+<h5>@Localizer["Birthdate"]: <i class="fw-normal">@Model.Birthdate.ToString("dd MMMM yyyy")</i></h5>
+<a class="text-decoration-none" onclick="location.href = '@Url.Action("Delete", "Reader", new {readerId = Model.Id})'"><small class="text-danger fw-bold">@Localizer["Delete"]</small></a>
 <hr />
 
-<h4>@Resources.Common.Current_Borrows <small class="text-muted">(@currentBorrows.Count())</small></h4>
+<h4>@Localizer["Current_Borrows"] <small class="text-muted">(@currentBorrows.Count())</small></h4>
 <hr />
 
 <table class="table">
     <thead>
         <tr>
-            <th>@Resources.Common.Book_Title</th>
-            <th>@Resources.Common.Borrow_Date</th>
-            <th>@Resources.Common.Return_Deadline</th>
+            <th>@Localizer["Book_Title"]</th>
+            <th>@Localizer["Borrow_Date"]</th>
+            <th>@Localizer["Return_Deadline"]</th>
         </tr>
     </thead>
     <tbody>
@@ -41,20 +43,20 @@
 
 @if(!currentBorrows.Any())
 {
-    <p>@Resources.Common.Nothing_To_Show_Here</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }
 
-<h4>@Resources.Common.History_Of_Borrows</h4>
+<h4>@Localizer["History_Of_Borrows"]</h4>
 
 <hr />
 
 <table class="table">
     <thead>
         <tr>
-            <th>@Resources.Common.Book_Title</th>
-            <th>@Resources.Common.Borrow_Date</th>
-            <th>@Resources.Common.Return_Deadline</th>
-            <th>@Resources.Common.Return_Date</th>
+            <th>@Localizer["Book_Title"]</th>
+            <th>@Localizer["Borrow_Date"]</th>
+            <th>@Localizer["Return_Deadline"]</th>
+            <th>@Localizer["Return_Date"]</th>
         </tr>
     </thead>
     <tbody>
@@ -72,5 +74,5 @@
 
 @if(!borrowsHistory.Any())
 {
-    <p>@Resources.Common.Nothing_To_Show_Here</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }

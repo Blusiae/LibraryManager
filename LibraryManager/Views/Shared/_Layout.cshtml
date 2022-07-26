@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="@Resources.Global.Lang">
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+
+<!DOCTYPE html>
+<html lang="@Localizer["Lang"]">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - @Resources.Global.App_Name</title>
+    <title>@ViewData["Title"] - @Localizer["App_Name"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LibraryManager.styles.css" asp-append-version="true" />
@@ -12,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@Resources.Global.App_Name</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["App_Name"]</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,16 +23,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Resources.Global.Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Reader" asp-action="List">@Resources.Global.Readers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reader" asp-action="List">@Localizer["Readers"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="List">@Resources.Global.Books</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="List">@Localizer["Books"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Borrow" asp-action="List">@Resources.Global.Borrows</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Borrow" asp-action="List">@Localizer["Borrows"]</a>
                         </li>
                     </ul>
                 </div>

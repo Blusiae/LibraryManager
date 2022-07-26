@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Title" xml:space="preserve">
-    <value>Rejestracja wypożyczenia</value>
+  <data name="Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Książka</value>
+  </data>
+  <data name="Borrow_Date" xml:space="preserve">
+    <value>Data wypożyczenia</value>
   </data>
   <data name="List_Title" xml:space="preserve">
     <value>Lista wypożyczeń</value>
   </data>
+  <data name="Reader" xml:space="preserve">
+    <value>Czytelnik</value>
+  </data>
   <data name="Return" xml:space="preserve">
     <value>Zwrot książki</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Rejestracja wypożyczenia</value>
   </data>
 </root>

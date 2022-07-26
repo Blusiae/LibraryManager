@@ -1,12 +1,15 @@
 using LibraryManager;
 using LibraryManager.Database;
 using LibraryManager.Domain;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+                .AddViewLocalization();
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseLazyLoadingProxies()
                       .UseSqlServer("Server=.;Database=LibraryManagerDB;Trusted_Connection=True;"));
@@ -28,6 +31,25 @@ builder.Services.AddTransient<DtoMapper>();
 builder.Services.AddTransient<ViewModelMapper>();
 #endregion
 
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("en-US");
+
+    var cultures = new CultureInfo[]
+    {
+        new CultureInfo("pl-PL")
+    };
+
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -44,6 +66,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseRequestLocalization();
 
 using (var scope = app.Services.CreateScope())
 {

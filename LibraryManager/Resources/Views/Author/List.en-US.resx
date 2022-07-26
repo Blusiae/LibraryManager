@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Title" xml:space="preserve">
-    <value>Dodaj nowego autora</value>
-  </data>
   <data name="Authors" xml:space="preserve">
-    <value>Autorzy</value>
+    <value>Authors</value>
   </data>
-  <data name="List_Title" xml:space="preserve">
-    <value>Zarządzanie autorami</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Nothing_To_Show_Here" xml:space="preserve">
+    <value>Nothing to show here!</value>
   </data>
   <data name="Number_Of_Books" xml:space="preserve">
-    <value>Liczba książek</value>
+    <value>Number of books</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Authors management</value>
   </data>
 </root>

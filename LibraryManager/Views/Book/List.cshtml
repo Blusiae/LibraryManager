@@ -1,21 +1,23 @@
-﻿@model List<BookViewModel>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer;
+@model List<BookViewModel>
 @{
-    ViewData["Title"] = Resources.Book.List_Title;
+    ViewData["Title"] = Localizer["Title"];
 }
 
-<h1>@Resources.Global.Books</h1>
+<h1>@Localizer["Books"]</h1>
 
 <hr />
 
-<a class="text-success fw-bold text-decoration-none" asp-controller="Book" asp-action="Add"><small>+ @Resources.Common.Add_New</small></a>
+<a class="text-success fw-bold text-decoration-none" asp-controller="Book" asp-action="Add"><small>+ @Localizer["Add_New"]</small></a>
 
 <table class="table">
     <thead>
         <tr>
-            <th>@Resources.Book.Title</th>
-            <th>@Resources.Book.Author</th>
-            <th>@Resources.Book.Publication_Year</th>
-            <th>@Resources.Book.Status</th>
+            <th>@Localizer["Book_Title"]</th>
+            <th>@Localizer["Author"]</th>
+            <th>@Localizer["Publication_Year"]</th>
+            <th>@Localizer["Status"]</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +28,7 @@
                 <td>@(book.Author.FirstName + " " + book.Author.LastName)</td>
                 <td>@book.PublishYear</td>
                 <td>
-                    @(book.IsBorrowed ? Resources.Book.Borrowed : Resources.Book.Unborrowed)
+                    @(book.IsBorrowed ? Localizer["Borrowed"] : Localizer["Unborrowed"])
                 </td>
             </tr>
         }
@@ -35,5 +37,5 @@
 
 @if(!Model.Any())
 {
-    <p>@Resources.Common.Nothing_To_Show_Here</p>
+    <p>@Localizer["Nothing_To_Show_Here"]</p>
 }

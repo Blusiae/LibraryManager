@@ -117,28 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Title" xml:space="preserve">
-    <value>Add new reader</value>
+  <data name="Actions" xml:space="preserve">
+    <value>Akcje</value>
   </data>
-  <data name="Birthdate" xml:space="preserve">
-    <value>Birthdate</value>
+  <data name="Add_New" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="Delete_Confirm_1" xml:space="preserve">
-    <value>Are you sure you want to delete</value>
+  <data name="Book_Title" xml:space="preserve">
+    <value>Tytuł książki</value>
   </data>
-  <data name="Delete_Confirm_2" xml:space="preserve">
-    <value>who's id is</value>
+  <data name="Borrow_Date" xml:space="preserve">
+    <value>Data wypożyczenia</value>
   </data>
-  <data name="Delete_Confirm_3" xml:space="preserve">
-    <value>born at</value>
+  <data name="Current_Borrows" xml:space="preserve">
+    <value>Aktywne wypożyczenia</value>
   </data>
-  <data name="Delete_Confirm_4" xml:space="preserve">
-    <value>and all their borrows</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
   </data>
-  <data name="Delete_Title" xml:space="preserve">
-    <value>Reader deleting</value>
+  <data name="Nothing_To_Show_Here" xml:space="preserve">
+    <value>Brak danych do wyświetlenia!</value>
   </data>
-  <data name="List_Title" xml:space="preserve">
-    <value>Readers list</value>
+  <data name="Reader" xml:space="preserve">
+    <value>Czytelnik</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Zwrot książki</value>
+  </data>
+  <data name="Return_Deadline" xml:space="preserve">
+    <value>Termin zwrotu</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Lista wypożyczeń</value>
   </data>
 </root>

@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Borrow" xml:space="preserve">
-    <value>Add Borrow</value>
+  <data name="Add_New" xml:space="preserve">
+    <value>Add new</value>
   </data>
-  <data name="Greeting" xml:space="preserve">
-    <value>Choose a tab from menu bar to manage books, readers and current borrows or click the "Add Borrow" button to add a new borrow.</value>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Birthdate</value>
   </data>
-  <data name="Greeting_Title" xml:space="preserve">
-    <value>Welcome to the</value>
+  <data name="First_Name" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Nothing_To_Show_Here" xml:space="preserve">
+    <value>Nothing to show here!</value>
+  </data>
+  <data name="Readers" xml:space="preserve">
+    <value>Readers</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Home Page</value>
+    <value>Readers list</value>
   </data>
 </root>

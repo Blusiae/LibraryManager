@@ -117,28 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Title" xml:space="preserve">
-    <value>Dodaj nowego czytelnika</value>
+  <data name="Add_New" xml:space="preserve">
+    <value>Dodaj</value>
   </data>
-  <data name="Birthdate" xml:space="preserve">
-    <value>Data urodzenia</value>
+  <data name="Author" xml:space="preserve">
+    <value>Autor</value>
   </data>
-  <data name="Delete_Confirm_1" xml:space="preserve">
-    <value>Czy jesteś pewny/a, że chcesz usunąć czytelnika </value>
+  <data name="Books" xml:space="preserve">
+    <value>Książki</value>
   </data>
-  <data name="Delete_Confirm_2" xml:space="preserve">
-    <value>o id</value>
+  <data name="Book_Title" xml:space="preserve">
+    <value>Tytuł książki</value>
   </data>
-  <data name="Delete_Confirm_3" xml:space="preserve">
-    <value>urodzonego dnia</value>
+  <data name="Borrowed" xml:space="preserve">
+    <value>Wypożyczona</value>
   </data>
-  <data name="Delete_Confirm_4" xml:space="preserve">
-    <value>i wszystkie jej/jego wypożyczenia?</value>
+  <data name="Nothing_To_Show_Here" xml:space="preserve">
+    <value>Brak danych do wyświetlenia!</value>
   </data>
-  <data name="Delete_Title" xml:space="preserve">
-    <value>Usuwanie czytelnika</value>
+  <data name="Publication_Year" xml:space="preserve">
+    <value>Data wydania</value>
   </data>
-  <data name="List_Title" xml:space="preserve">
-    <value>Lista czytelników</value>
+  <data name="Status" xml:space="preserve">
+    <value>Stan</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Lista książek</value>
+  </data>
+  <data name="Unborrowed" xml:space="preserve">
+    <value>Niewypożyczona</value>
   </data>
 </root>

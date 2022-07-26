@@ -1,9 +1,12 @@
-﻿@{
-    ViewData["Title"] = Resources.Global.App_Name;
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer;
+@{
+    ViewData["Title"] = Localizer["Title"];
 }
 
 <div class="text-center">
-    <h1 class="display-4 mt-5">@Resources.Home.Greeting_Title <b>@Resources.Global.App_Name!</b></h1>
-    <p>@Resources.Home.Greeting</p>
-    <button class="btn btn-success" onclick="location.href = '@Url.Action("Add", "Borrow")'">@Resources.Home.Add_Borrow</button>
+    <h1 class="display-4 mt-5">@Localizer["Greeting_Title"] <b>@Localizer["App_Name"]</b>!</h1>
+    <p>@Localizer["Greeting"]</p>
+    <button class="btn btn-success" onclick="location.href = '@Url.Action("Add", "Borrow")'">@Localizer["Add_Borrow"]</button>
 </div>

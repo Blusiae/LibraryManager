@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Borrow" xml:space="preserve">
-    <value>Zarejestruj wypożyczenie</value>
+  <data name="Delete_Confirm_1" xml:space="preserve">
+    <value>Are you sure you want to delete</value>
   </data>
-  <data name="Greeting" xml:space="preserve">
-    <value>Wybierz zakładkę w pasku wyboru, aby zarządzać książkami, czytelnikami i wypożyczeniami lub wciśnij przycisk "Zarejestruj wypożyczenie", aby przejść do rejestrowania nowego wypożyczenia.</value>
+  <data name="Delete_Confirm_2" xml:space="preserve">
+    <value>book with id</value>
   </data>
-  <data name="Greeting_Title" xml:space="preserve">
-    <value>Witaj w aplikacji</value>
+  <data name="Delete_Confirm_3" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="Delete_Confirm_4" xml:space="preserve">
+    <value>and its all borrows?</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Strona główna</value>
+    <value>Book deleting</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>
